@@ -51,5 +51,9 @@ public class Student {
         return stringExamScores;
     }
 
+    public void addExamScore(Double examScore) {
+        this.examScores.add(examScore);
+    }
+
 
 }
