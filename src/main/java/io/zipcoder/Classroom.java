@@ -1,17 +1,17 @@
 package io.zipcoder;
 
 public class Classroom {
-    private Student[] students;
-    private int maxNumberOfStudents;
+    private Student[] students;         // this is an array of students.
+    private int maxNumberOfStudents; //this represents the max length of the students array.
 
 
     Classroom (int maxNumberOfStudents) {
-        this.maxNumberOfStudents = maxNumberOfStudents;
+        this.students = new Student [maxNumberOfStudents];
     }
 
-    Classroom (int maxNumberOfStudents, Student [] students)    {
-        this.maxNumberOfStudents = maxNumberOfStudents;
-        this.students = students;
+    Classroom (Student [] students)    {
+         this.students = students;
+
     }
 
     Classroom ()    {
