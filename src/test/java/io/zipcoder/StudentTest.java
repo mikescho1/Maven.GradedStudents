@@ -91,11 +91,25 @@ public class StudentTest {
     }
 
     @Test
-    public void getAverageExamScore()   {
+    public void getAverageExamScoreTest()   {
         Student student = new Student("Frank", "Hart", new Double[] {40.0, 99.9});
-        double expected = ((40.0 + 100.0) / 2);
+        double expected = Math.round((40.0 + 100.0) / 2);
         double actual = student.getAverageExamScore();
-        Assert.assertEquals(expected, actual, .05);
+        Assert.assertEquals(expected, actual, .01);
+    }
+
+    @Test
+    public void toStringTest()  {
+        Student student = new Student("Frank", "Hart", new Double[] {40.0, 99.9});
+        String expected = "Student Name: Frank Hart\n" +
+                "> Average Score: 70\n" +
+                "> Exam Scores:\n" +
+                "\tExam 1 -> 40\n" +
+                "\tExam 2 -> 100\n";
+        String actual = student.toString();
+        System.out.println(student.toString());
+        Assert.assertEquals(expected, actual);
+
 
     }
 
