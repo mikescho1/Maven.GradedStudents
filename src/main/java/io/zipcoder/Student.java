@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import java.lang.reflect.Array;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -35,8 +36,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public ArrayList<Double> getExamScores(ArrayList<Double> examScores) {
-        return examScores;
+    public ArrayList<Double> getExamScoresDouble() {
+        ArrayList<Double> scores = new ArrayList<>();
+        for(Double results : examScores)    {
+            scores.add(results);
+        }   return scores;
     }
 
     public Integer getNumberOfExamsTaken() {

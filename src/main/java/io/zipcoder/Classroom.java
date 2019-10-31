@@ -1,5 +1,7 @@
 package io.zipcoder;
 
+import java.util.ArrayList;
+
 public class Classroom {
     private Student[] students;         // this is an array of students.
     private int maxNumberOfStudents; //this represents the max length of the students array.
@@ -22,14 +24,19 @@ public class Classroom {
         return students;
     }
 
-    public double getAverageExamScore(double[]examScores) {
-        double avgExamScore = 0;
+    public double getClassAverageExamScore() {
+        Integer counter = 0;
+        Double sum = 0.0;
+        for (Student student : students) {
+            ArrayList<Double> examScores = student.getExamScoresDouble();
+            for (Double scores : examScores) {
+                sum += scores;
+                counter++;
+            }
+        }
+        return sum / counter;
+    }
 
-        for (int i = 0; i < examScores.length; i++) {
-            avgExamScore += examScores[i];
-        }   return avgExamScore / students.length;
-
-}
 
 
 

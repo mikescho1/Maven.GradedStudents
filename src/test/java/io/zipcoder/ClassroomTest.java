@@ -55,8 +55,14 @@ public class ClassroomTest {
         Assert.assertEquals(expected, actual);
     }
 
+
+
     @Test
     public void getAverageExamScore()   {
+        Classroom classroomHistory = new Classroom((new Student[] {student4, student3}));
+        Student dumbkids [] = classroomHistory.getStudents();
+        double expected = 98.9;
+        double actual =
 
     }
 

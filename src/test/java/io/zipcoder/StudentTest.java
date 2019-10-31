@@ -109,12 +109,7 @@ public class StudentTest {
         String actual = student.toString();
         System.out.println(student.toString());
         Assert.assertEquals(expected, actual);
-
-
     }
-
-
-
 
 
 
