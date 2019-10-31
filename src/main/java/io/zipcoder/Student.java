@@ -44,8 +44,8 @@ public class Student {
         Integer examNum = 1;
         int i = 1;
         String stringExamScores = "Exam Scores:\n";
-        for (i = 1; i < examScores.size(); i++) {
-             stringExamScores += String.format("\tExam %d -> %d\n", i, (int)Math.rint(this.examScores.get(i)));
+        for (i = 0; i < examScores.size(); i++) {
+             stringExamScores += String.format("\tExam %d -> %d\n", i + 1, (int)Math.round(this.examScores.get(i)));
         }
         System.out.println(stringExamScores);
         return stringExamScores;
@@ -56,7 +56,15 @@ public class Student {
     }
 
     public void setExamScores(int examIndex, double exam)   {
-        examScores.add(examIndex, exam);
+        examScores.set(examIndex, exam);
+    }
+
+    public double getAverageExamScore() {
+        double sum = 0;
+        for(Double value : examScores)  {
+            sum+= value;
+        }   return sum / this.examScores.size();
+
     }
 
 
