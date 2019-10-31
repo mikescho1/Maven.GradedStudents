@@ -1,8 +1,8 @@
 package io.zipcoder;
 
 public class Classroom {
-    Student[] students;
-    int maxNumberOfStudents;
+    private Student[] students;
+    private int maxNumberOfStudents;
 
 
     Classroom (int maxNumberOfStudents) {
@@ -15,7 +15,7 @@ public class Classroom {
     }
 
     Classroom ()    {
-        Student[] student = new Student [30];
+         this.students = new Student [30];
     }
 
     public Student[] getStudents() {
