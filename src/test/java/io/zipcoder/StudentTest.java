@@ -76,8 +76,17 @@ public class StudentTest {
         String expected = "Exam Scores:\n" +
                 "\tExam 1 -> 100\n";
         String actual = student.getExamScores();
+    }
+    @Test
+    public void setExamScoreTest()  {
+        Student student = new Student("Frank", "Hart", new Double[] {});
+        student.setExamScores(0, 97.5);
+        String expected = "97.5";
+        String actual = student.getExamScores();
 
     }
+
+
 
 
 

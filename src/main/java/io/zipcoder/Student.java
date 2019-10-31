@@ -55,5 +55,9 @@ public class Student {
         this.examScores.add(examScore);
     }
 
+    public void setExamScores(int examIndex, double exam)   {
+        examScores.add(examIndex, exam);
+    }
+
 
 }
