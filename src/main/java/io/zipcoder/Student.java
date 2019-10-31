@@ -31,7 +31,7 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public ArrayList<Double> getExamScores() {
+    public ArrayList<Double> getExamScores(ArrayList<Double> examScores) {
         return examScores;
     }
 
@@ -39,7 +39,8 @@ public class Student {
         return examScores.size();
     }
 
-
+    public String getExamScores()   {
+        Integer examNum = 0;
 
 
     }
