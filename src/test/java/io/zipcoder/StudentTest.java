@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -54,6 +55,17 @@ public class StudentTest {
         String expected = "Thomas";
         student.setLastName("Thomas");
         String actual = student.getLastName();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getExamScoresTest() {
+        Student student = new Student("Frank", "Hart", new Double[] {99.0, 98.8, 97.6, 96.5});
+        String expected = "Exam Scores:\n" +
+                "\tExam 1 -> 99\n" +
+                "\tExam 2 -> 98\n" +
+                "\tExam 3 -> 96\n";
+        String actual = student.getExamScores();
         Assert.assertEquals(expected, actual);
     }
 

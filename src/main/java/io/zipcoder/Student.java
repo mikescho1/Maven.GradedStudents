@@ -45,8 +45,9 @@ public class Student {
         int i = 1;
         String stringExamScores = "Exam Scores:\n";
         for (i = 1; i < examScores.size(); i++) {
-             stringExamScores += String.format("\tExam %d ->\n",  (int)Math.rint(this.examScores.get(i)));
+             stringExamScores += String.format("\tExam %d -> %d\n", i, (int)Math.rint(this.examScores.get(i)));
         }
+        System.out.println(stringExamScores);
         return stringExamScores;
     }
 
