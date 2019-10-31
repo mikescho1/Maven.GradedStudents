@@ -41,17 +41,14 @@ public class Student {
     }
 
     public String getExamScores()   {
-
-        String examList = "";
-        Integer examNum = 0;
-        for (int i = 0; i < examScores.size(); i++) {
-            examList = "Exam " + examNum + "-> " + examScores.get(i).toString();
-            examNum++;
-
-
-            
+        Integer examNum = 1;
+        int i = 1;
+        String stringExamScores = "Exam Scores:\n";
+        for (i = 1; i < examScores.size(); i++) {
+             stringExamScores += String.format("\tExam %d ->\n",  (int)Math.rint(this.examScores.get(i)));
         }
-
-        return null;
+        return stringExamScores;
     }
+
+
 }
