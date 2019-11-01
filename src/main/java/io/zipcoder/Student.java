@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Student {
+public class Student{
 
 
     private String firstName;
@@ -36,15 +36,19 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public ArrayList<Double> getExamScoresDouble() {
-        ArrayList<Double> scores = new ArrayList<>();
-        for(Double results : examScores)    {
-            scores.add(results);
-        }   return scores;
+    public ArrayList<Double> getListOfScores()  {
+        return this.examScores;
     }
 
+//    public ArrayList<Double> getExamScoresDouble() {
+//        ArrayList<Double> scores = new ArrayList<>();
+//        for(Double results : examScores)    {
+//            scores.add(results);
+//        }   return scores;
+//    }
+
     public Integer getNumberOfExamsTaken() {
-        return examScores.size();
+        return this.examScores.size();
     }
 
     public String getExamScores() {
