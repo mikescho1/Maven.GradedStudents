@@ -54,5 +54,70 @@ public class Classroom {
             break;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public Student [] getStudentsByScore()  {
+        Student [] studentsSortedByScore = new Student [this.students.length];
+        for (int i = 0; i < students.length; i++) {
+            if(students[i].getAverageExamScore() < students[i + 1].getAverageExamScore()) {
+                students[i] = students[i];
+            }   if(students[i].getAverageExamScore() > students[i + 1].getAverageExamScore()) {
+                Student tempHolder = students[i];
+                students[i] = students[i + 1];
+                students[i + 1] = tempHolder;
+            }   if(students[i] == students[i + 1])  {
+                    if(students[i].getLastName().charAt(0) < students[i + 1].getLastName().charAt(0))   {
+
+
+
+
+        }
+            <
+
+
+            Student student = studentsSortedByScore[i];
+
+        }
+
+
+        //        for(Student student : students)    {
+
+
+            }
+        }
+
+
+        return null;
+    }
 }
 
