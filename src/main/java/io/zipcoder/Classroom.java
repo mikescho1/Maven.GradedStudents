@@ -42,23 +42,17 @@ public class Classroom {
         students = students2;
     }
 
-
+    //Remove Student
     public void removeStudent(String firstName, String lastName) {
-        Student[] students1 = new Student[students.length - 1];
-        int identifier = 0;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i].getFirstName().equals(firstName) && students[i].getLastName().equals(lastName)) {
-                identifier = i;
-            }
-        }
-        for (int i = 0; i < students1.length; i++) {
-            if (i < identifier) {
-                students1[i] = students[i];
-            }
-            if (i > identifier) {
-                students[i - 1] = students[i];
-
-            }
+        for (int i = 0; i < this.students.length; i++) {
+            if (this.students[i].getFirstName() == firstName && this.students[i].getLastName() == lastName) {
+                Student temp = this.students[i];
+                for (int j = i; j < this.students.length - 1; j++) {
+                    this.students[j] = this.students[j + 1];
+                }
+            }this.students[this.students.length-1] = null;
+            break;
         }
     }
 }
+

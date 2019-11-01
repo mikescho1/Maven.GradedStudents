@@ -85,8 +85,63 @@ public class ClassroomTest {
 
         Assert.assertEquals(expectedStudent, actualStudent);
         Assert.assertEquals(expectedInt, actualInt);
+    }
+
+    @Test
+    public void removeStudentTest() {
+        Student student1 = new Student("Adam", "Scho", new Double[]{100.0, 100.0, 100.0});
+        Student student2 = new Student("Bill", "Smith", new Double[]{99.3, 75.9, 88.0});
+        Student student3 = new Student("Sean", "Dab", new Double[]{94.0, 81.4, 100.0});
+        Student student4 = new Student("Alice", "Kite", new Double[]{100.0, 99.3, 99.1});
+        Student student5 = new Student("Suzie", "Echo", new Double[]{96.5, 98.3, 100.0});
+        Classroom classroomSocialStudies = new Classroom(new Student[] {student2,});
+        Student [] studentList = classroomSocialStudies.getStudents();
+        classroomSocialStudies.removeStudent(student2.getFirstName(), student2.getLastName());
+        Student expectedStudent = null;
+        Student actualStudent = studentList[0];
+        int expectedInt = 1;
+        int actualInt = classroomSocialStudies.getStudents().length;
+        Assert.assertEquals(expectedStudent, actualStudent);
+        Assert.assertEquals(expectedInt, actualInt);
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
