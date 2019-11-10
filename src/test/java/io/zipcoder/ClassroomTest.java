@@ -103,47 +103,39 @@ public class ClassroomTest {
         int actualInt = classroomSocialStudies.getStudents().length;
         Assert.assertEquals(expectedStudent, actualStudent);
         Assert.assertEquals(expectedInt, actualInt);
-
     }
 
 
 
+    @Test
+    public void sortByDescendingAvgExamScoreTest()    {
+        Student student1 = new Student("Adam", "Scho", new Double[]{99.3, 75.9});
+        Student student2 = new Student("Bill", "Smith", new Double[]{94.0, 91.4});
+        Student student3 = new Student("Sean", "Dab", new Double[]{100.0, 100.0});
+
+        Classroom classroomSocialStudies = new Classroom(new Student[] {student1, student2, student3});
+        Student [] expected = new Student[] {student3, student2, student1};
+
+        Student[] actual = classroomSocialStudies.sortByDescendingAvgExamScore();
+
+        Assert.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void sortByNameTest()    {
+        Student student1 = new Student("Adam", "Scho", new Double[]{99.3, 75.9});
+        Student student2 = new Student("Bill", "Smith", new Double[]{94.0, 91.4});
+        Student student3 = new Student("Sean", "Dab", new Double[]{100.0, 100.0});
+        Classroom classroom = new Classroom(new Student[] {student1, student2, student3});
+
+        Student[] expected = new Student[] {student3, student1, student2};
+        Student[] actual = classroom.sortByName();
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 
 
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

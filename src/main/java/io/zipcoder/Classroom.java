@@ -2,6 +2,9 @@ package io.zipcoder;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 
 public class Classroom {
     private Student[] students;         // this is an array of students.
@@ -50,74 +53,54 @@ public class Classroom {
                 for (int j = i; j < this.students.length - 1; j++) {
                     this.students[j] = this.students[j + 1];
                 }
-            }this.students[this.students.length-1] = null;
+            }
+            this.students[this.students.length - 1] = null;
             break;
         }
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public Student [] getStudentsByScore()  {
-        Student [] studentsSortedByScore = new Student [this.students.length];
+    public Student[] getStudentsByScore() {
+        sortByDescendingAvgExamScore();
         for (int i = 0; i < students.length; i++) {
-            if(students[i].getAverageExamScore() < students[i + 1].getAverageExamScore()) {
-                students[i] = students[i];
-            }   if(students[i].getAverageExamScore() > students[i + 1].getAverageExamScore()) {
-                Student tempHolder = students[i];
-                students[i] = students[i + 1];
-                students[i + 1] = tempHolder;
-            }   if(students[i] == students[i + 1])  {
-                    if(students[i].getLastName().charAt(0) < students[i + 1].getLastName().charAt(0))   {
-
-
-
-
-        }
-            <
-
-
-            Student student = studentsSortedByScore[i];
-
-        }
-
-
-        //        for(Student student : students)    {
-
-
+            if (students[i] == students[i + 1]) {
+                sortByName();
             }
         }
-
-
-        return null;
+        return students;
     }
-}
 
+    public Student[] sortByDescendingAvgExamScore()   {
+        Arrays.sort(students, new StudentAvgExamSorter());
+        return students;
+    }
+
+    public Student[] sortByName()   {
+        Arrays.sort(students, new StudentNameSorter());
+        return students;
+
+    }
+
+    public HashMap<Student, String> getGradeBook()  {
+        HashMap studentsMap = new HashMap();
+
+        for(int i = 0; i < students.length; i++)   {
+            if(students[i].getAverageExamScore() >= getClassAverageExamScore() * .9)   {
+                studentsMap.put(students[i].getLastName(), "A");
+            }   if(students[i].getAverageExamScore() >= getClassAverageExamScore() * .8) {
+                studentsMap.put(students[i].getLastName(), "B");
+            }   if(students[i].getAverageExamScore() >= getClassAverageExamScore() * .5) {
+                studentsMap.put(students[i].getLastName(), "B");
+            }   if(students[i].getAverageExamScore() >= getClassAverageExamScore() * .11) {
+                studentsMap.put(students[i].getLastName(), "B");
+            }   else    {
+                studentsMap.put(students[i].getLastName(), "F");
+            }
+        }
+        return studentsMap;
+    }
+
+
+
+
+}
